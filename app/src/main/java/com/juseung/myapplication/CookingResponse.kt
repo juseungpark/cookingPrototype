@@ -1,0 +1,139 @@
+package com.juseung.myapplication
+
+
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
+data class CookingResponse(
+    @field:Json(name = "COOKRCP01")
+    val cOOKRCP01: COOKRCP01
+)
+@JsonClass(generateAdapter = true)
+data class COOKRCP01(
+    @field:Json(name = "RESULT")
+    val rESULT: RESULT?,
+    @field:Json(name = "row")
+    val row: List<Row>?,
+    @field:Json(name = "total_count")
+    val totalCount: String?
+)
+@JsonClass(generateAdapter = true)
+data class RESULT(
+    @field:Json(name = "CODE")
+    val cODE: String?,
+    @field:Json(name = "MSG")
+    val mSG: String?
+)
+
+@JsonClass(generateAdapter = true)
+data class Row(
+    @field:Json(name = "ATT_FILE_NO_MAIN")
+    val aTTFILENOMAIN: String?,
+    @field:Json(name = "ATT_FILE_NO_MK")
+    val aTTFILENOMK: String?,
+    @field:Json(name = "HASH_TAG")
+    val hASHTAG: String?,
+    @field:Json(name = "INFO_CAR")
+    val iNFOCAR: String?,
+    @field:Json(name = "INFO_ENG")
+    val iNFOENG: String?,
+    @field:Json(name = "INFO_FAT")
+    val iNFOFAT: String?,
+    @field:Json(name = "INFO_NA")
+    val iNFONA: String?,
+    @field:Json(name = "INFO_PRO")
+    val iNFOPRO: String?,
+    @field:Json(name = "INFO_WGT")
+    val iNFOWGT: String?,
+    @field:Json(name = "MANUAL01")
+    val mANUAL01: String?,
+    @field:Json(name = "MANUAL02")
+    val mANUAL02: String?,
+    @field:Json(name = "MANUAL03")
+    val mANUAL03: String?,
+    @field:Json(name = "MANUAL04")
+    val mANUAL04: String?,
+    @field:Json(name = "MANUAL05")
+    val mANUAL05: String?,
+    @field:Json(name = "MANUAL06")
+    val mANUAL06: String?,
+    @field:Json(name = "MANUAL07")
+    val mANUAL07: String?,
+    @field:Json(name = "MANUAL08")
+    val mANUAL08: String?,
+    @field:Json(name = "MANUAL09")
+    val mANUAL09: String?,
+    @field:Json(name = "MANUAL10")
+    val mANUAL10: String?,
+    @field:Json(name = "MANUAL11")
+    val mANUAL11: String?,
+    @field:Json(name = "MANUAL12")
+    val mANUAL12: String?,
+    @field:Json(name = "MANUAL13")
+    val mANUAL13: String?,
+    @field:Json(name = "MANUAL14")
+    val mANUAL14: String?,
+    @field:Json(name = "MANUAL15")
+    val mANUAL15: String?,
+    @field:Json(name = "MANUAL16")
+    val mANUAL16: String?,
+    @field:Json(name = "MANUAL17")
+    val mANUAL17: String?,
+    @field:Json(name = "MANUAL18")
+    val mANUAL18: String?,
+    @field:Json(name = "MANUAL19")
+    val mANUAL19: String?,
+    @field:Json(name = "MANUAL20")
+    val mANUAL20: String?,
+    @field:Json(name = "MANUAL_IMG01")
+    val mANUALIMG01: String?,
+    @field:Json(name = "MANUAL_IMG02")
+    val mANUALIMG02: String?,
+    @field:Json(name = "MANUAL_IMG03")
+    val mANUALIMG03: String?,
+    @field:Json(name = "MANUAL_IMG04")
+    val mANUALIMG04: String?,
+    @field:Json(name = "MANUAL_IMG05")
+    val mANUALIMG05: String?,
+    @field:Json(name = "MANUAL_IMG06")
+    val mANUALIMG06: String?,
+    @field:Json(name = "MANUAL_IMG07")
+    val mANUALIMG07: String?,
+    @field:Json(name = "MANUAL_IMG08")
+    val mANUALIMG08: String?,
+    @field:Json(name = "MANUAL_IMG09")
+    val mANUALIMG09: String?,
+    @field:Json(name = "MANUAL_IMG10")
+    val mANUALIMG10: String?,
+    @field:Json(name = "MANUAL_IMG11")
+    val mANUALIMG11: String?,
+    @field:Json(name = "MANUAL_IMG12")
+    val mANUALIMG12: String?,
+    @field:Json(name = "MANUAL_IMG13")
+    val mANUALIMG13: String?,
+    @field:Json(name = "MANUAL_IMG14")
+    val mANUALIMG14: String?,
+    @field:Json(name = "MANUAL_IMG15")
+    val mANUALIMG15: String?,
+    @field:Json(name = "MANUAL_IMG16")
+    val mANUALIMG16: String?,
+    @field:Json(name = "MANUAL_IMG17")
+    val mANUALIMG17: String?,
+    @field:Json(name = "MANUAL_IMG18")
+    val mANUALIMG18: String?,
+    @field:Json(name = "MANUAL_IMG19")
+    val mANUALIMG19: String?,
+    @field:Json(name = "MANUAL_IMG20")
+    val mANUALIMG20: String?,
+    @field:Json(name = "RCP_NM")
+    val rCPNM: String?,
+    @field:Json(name = "RCP_PARTS_DTLS")
+    val rCPPARTSDTLS: String?,
+    @field:Json(name = "RCP_PAT2")
+    val rCPPAT2: String?,
+    @field:Json(name = "RCP_SEQ")
+    val rCPSEQ: String?,
+    @field:Json(name = "RCP_WAY2")
+    val rCPWAY2: String?
+)
