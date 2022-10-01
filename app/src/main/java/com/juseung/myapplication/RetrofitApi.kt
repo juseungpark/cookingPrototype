@@ -16,6 +16,8 @@ object RetrofitApi {
             .build()
     }
 
+
+
     private val retrofit: Retrofit by lazy {
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
