@@ -1,6 +1,7 @@
 package com.juseung.myapplication
 
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.juseung.myapplication.databinding.ItemCookingBinding
 
 class CookingAdapter : ListAdapter<Row, CookingAdapter.CookingViewHolder>(DiffCallback) {
+    private var cookingList = emptyList<Row>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CookingViewHolder {
         val binding = ItemCookingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -21,19 +23,18 @@ class CookingAdapter : ListAdapter<Row, CookingAdapter.CookingViewHolder>(DiffCa
 
     class CookingViewHolder(private val binding: ItemCookingBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
         fun bind(item: Row) {
             with(binding) {
-                tvName.text = item.rCPNM
-                tvType.text = item.iNFOENG
-                tvPhone.text = item.iNFOCAR
-                tvAddr.text = item.iNFOPRO
+                rcpName.text = item.rCPNM
+                rcpCal.text = item.iNFOENG
+               rcpDan.text = item.iNFOPRO
             }
         }
     }
 
+
     companion object {
-        private val DiffCallback = object : DiffUtil.ItemCallback<Row>() {
+        private val DiffCallback = object : DiffUtil.ItemCallback<Row?>() {
             override fun areItemsTheSame(oldItem: Row, newItem: Row): Boolean {
                 return oldItem.hashCode() == newItem.hashCode()
             }

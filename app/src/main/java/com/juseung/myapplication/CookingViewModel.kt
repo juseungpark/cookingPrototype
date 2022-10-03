@@ -11,21 +11,27 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CookingViewModel(cookingRepository: CookingRepository) : ViewModel() {
-    private val repository = CookingRepository()
-
-    private val _cookingByIdLiveData = MutableLiveData<CookingResponse?>()
-    val cookingByIdLiveData: LiveData<CookingResponse?> = _cookingByIdLiveData
+class CookingViewModel(private val cookingRepository: CookingRepository) : ViewModel() {
+    private val _cookingRepositories = MutableLiveData<List<Row>>()
+    val cookingRepositories = _cookingRepositories
 
 
-    fun refreshcooking(keyId: String,
+
+
+    fun requestCookingRepositories(keyId: String,
                        serviceId: String,
                        dataType: String,
                        startIdx: String,
                        endIdx: String) {
-        viewModelScope.launch {
-            val response = repository.getDataCoroutine(keyId, serviceId, dataType, startIdx, endIdx)
-            _cookingByIdLiveData.postValue(response)
+        CoroutineScope(Dispatchers.IO).launch {
+            cookingRepository.getDataCoroutine(keyId, serviceId, dataType, startIdx, endIdx).let { response ->
+            if(response.isSuccessful) {
+                response.body()?.cOOKRCP01?.row?.let{
+                    _cookingRepositories.postValue(it)
+
+                }
+            }
+            }
         }
 
 

@@ -6,18 +6,14 @@ import retrofit2.http.Path
 
 
 class CookingRepository {
+    private val cookingClient = RetrofitApi.cookingService
     suspend fun getDataCoroutine(
         keyId: String,
         serviceId: String,
         dataType: String,
         startIdx: String,
         endIdx: String
-    ) : CookingResponse? {
-        val request = RetrofitApi.cookingService.getDataCoroutine(keyId, serviceId, dataType, startIdx, endIdx)
-        if (request.isSuccessful) {
-            return request.body()!!
-        }
-        return null
-    }
+    ) = cookingClient.getDataCoroutine(keyId, serviceId, dataType, startIdx, endIdx)
 }
+
 

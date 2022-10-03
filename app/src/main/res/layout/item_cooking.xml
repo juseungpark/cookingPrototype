@@ -15,7 +15,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/rcp_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="메뉴명"
@@ -23,25 +23,19 @@
             android:padding="3dp" />
 
         <TextView
-            android:id="@+id/tv_type"
+            android:id="@+id/rcp_cal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="구분"
+            android:text="칼로리"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tv_phone"
+            android:id="@+id/rcp_dan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="전화번호"
+            android:text="단백질"
             android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/tv_addr"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="주소"
-            android:textSize="18sp" />
     </LinearLayout>
 
 </LinearLayout>
